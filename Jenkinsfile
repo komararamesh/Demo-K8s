@@ -9,7 +9,7 @@ pipeline {
         AWS_DEFAULT_REGION="us-east-1" 
         IMAGE_REPO_NAME="jenkins-ecr-repo-2"
         IMAGE_TAG="latest"
-        REPOSITORY_URI = "${210057662887}.dkr.ecr.${us-east-1}.amazonaws.com/${jenkins-ecr-repo-2}"	
+        REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"	
         EMAIL_TO = 'komararamesh@gmail.com'
     }
     stages{
