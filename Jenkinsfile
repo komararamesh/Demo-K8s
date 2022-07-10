@@ -51,12 +51,12 @@ pipeline {
 	    stage('Deploy App on k8s') {
            steps {
             sshagent(['ssh-k8s-master']) {
-            sh "scp -o StrictHostKeyChecking=no java-app-deployment.yaml ec2-user@3.108.64.225:/home/ec2-user"
+            sh "scp -o StrictHostKeyChecking=no java-app-deployment.yaml ec2-user@3.83.163.123:/home/ec2-user"
             script {
                 try{
-                  sh "ssh ec2-user@3.108.64.225 kubectl create -f java-app-deployment.yaml"
+                  sh "ssh ec2-user@3.83.163.123 kubectl create -f java-app-deployment.yaml"
                 }catch(error){
-                    sh "ssh ec2-user@3.108.64.225 kubectl apply -f java-app-deployment.yaml"
+                    sh "ssh ec2-user@3.83.163.123 kubectl apply -f java-app-deployment.yaml"
             }
 }
         }
